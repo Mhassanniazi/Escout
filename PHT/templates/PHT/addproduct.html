@@ -1,0 +1,49 @@
+{%  extends 'PHT/main.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<style>
+    .btn-primary{
+      color: #080103;
+      background-color: #f57706;
+      font-size: large;
+      border-color: #f57706;
+    }
+  .btn-primary:hover{
+    background-color: #080103;
+    font-size: bold;
+    color: #f57706;
+  }
+</style>
+<br>
+<div class="card card-body" style="position: relative;">
+<form method="POST" action="">
+    <!-- <input class="btn login_btn"  value="Login"> -->
+    {% csrf_token %}
+    <div class="input-group mb-3">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="URLS">
+        <label class="form-check-label" for="URLS">
+          URLS
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="SKU">
+        <label class="form-check-label" for="SKU">
+          SKU
+        </label>
+      </div>
+    <input class="btn btn-primary  btn-sm btn-block" type="submit" value="Add-Product">
+    
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-external-link-alt"></i></span>
+        </div>
+
+        <input type="text" name="urls" placeholder="Enter Url of Daraz of Product OR SKU-NUMBER of Product..." class="form-control" value="{{urls}}">
+        
+    </div>
+    
+    </form>
+  </div>
+{% endblock %}
+
